@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/dsr
+    username: postgres
+    password: 1243
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+short-link:
+  baseUrl: http://localhost:8080/api/
+
+application:
+  security:
+    jwt:
+      secret-key: 9c28698cde556dab2e21f1208d1c9b7c05b4d04b7d5cb6ac6a5d5a61c5b7569f
+      expiration: 86400000 # a day 86400000
+      refresh-token:
+        expiration: 6048800000 # 7 days
